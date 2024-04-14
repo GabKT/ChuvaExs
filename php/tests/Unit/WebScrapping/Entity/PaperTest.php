@@ -27,3 +27,4 @@ class PaperTest extends TestCase {
   }
 
 }
+?>
