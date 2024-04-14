@@ -75,3 +75,5 @@ dart/**/app.*.map.json
 dart/android/app/debug
 dart/android/app/profile
 dart/android/app/release
+
+/vendor/
