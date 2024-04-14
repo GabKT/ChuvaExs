@@ -3,7 +3,6 @@
 namespace Chuva\Php\WebScrapping;
 
 use OpenSpout\Writer\Common\Creator\WriterEntityFactory;
-use OpenSpout\Common\Entity\Row;
 /**
  * Runner for the Webscrapping exercice.
  */
