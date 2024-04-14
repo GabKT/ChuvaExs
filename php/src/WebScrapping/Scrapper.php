@@ -21,13 +21,12 @@ class Scrapper {
       //a[@class='paper-card p-lg bd-gradient-left']//div//div[@class='tags mr-sm'] | 
       //div[@class='volume-info']");
     $allDatas = [];
-    $count = 0;
+    $count = 0; //wait for all variables to be filled
 
     foreach($dataList as $data){
       if($data->nodeName === 'h4'){
           $title = $data->nodeValue;
       }
-        
       if ($data->nodeName === 'div' && $data->getAttribute('class')==='authors') {
           $spans = $data->getElementsByTagName('span');
           foreach($spans as $span){
@@ -47,8 +46,8 @@ class Scrapper {
       if($count == 4){
         $paper = new Paper($id, $title, $type, $authors);
         $allDatas[] = $paper;
-        $count=0;
-        $authors = [];
+        $count=0; // reset count
+        $authors = []; //reset array
       }
     }
     //var_dump($allDatas);
