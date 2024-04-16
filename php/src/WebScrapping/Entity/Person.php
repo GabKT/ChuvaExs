@@ -24,12 +24,12 @@ class Person {
     $this->name = $name;
     $this->institution = $institution;
   }
-  /*
-  * Show in String.
-  */
+  
+  /** 
+   * Show in String.
+   */
   public function __toString(): string {
     return "$this->name $this->institution;";
-    
   }
 
 }
