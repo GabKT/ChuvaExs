@@ -13,13 +13,9 @@ class Scrapper {
   /**
    * Loads paper information from the HTML and returns the array with the data.
    */
-  public function scrap(\DOMDocument $dom): array {
+  public function scrap(\DOMDocument $dom, String $queryXPATH): array {
     $xpath = new \DOMXPath($dom);
-    $dataList = $xpath->query(
-      "//a[@class='paper-card p-lg bd-gradient-left']//h4 | 
-       //div[@class='authors']| 
-      //a[@class='paper-card p-lg bd-gradient-left']//div//div[@class='tags mr-sm'] | 
-      //div[@class='volume-info']");
+    $dataList = $xpath->query($queryXPATH);
     $allDatas = [];
     $count = 0;
     foreach ($dataList as $data) {

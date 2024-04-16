@@ -16,7 +16,11 @@ class Main {
 
     $dom = new \DOMDocument('1.0', 'utf-8');
     $dom->loadHTMLFile(__DIR__ . '/../../assets/origin.html');
-    $payload = (new Scrapper())->scrap($dom);
+    $query = "//a[@class='paper-card p-lg bd-gradient-left']//h4 | 
+              //div[@class='authors']| 
+              //a[@class='paper-card p-lg bd-gradient-left']//div//div[@class='tags mr-sm'] | 
+              //div[@class='volume-info']";
+    $payload = (new Scrapper())->scrap($dom, $query);
     $writer = WriterEntityFactory::createXLSXWriter();
     $writer->openToFile(__DIR__ . '/../../assets/model.xlsx');
     $columns = ['ID', 'TITLE', 'TYPE'];

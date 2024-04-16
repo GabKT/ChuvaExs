@@ -45,4 +45,13 @@ class Paper {
     $this->authors = $authors;
   }
 
+  public function __toString() : string {
+    
+    $string = "$this->id, $this->title, $this->type,";
+    foreach ($this->authors as $author) {
+      $string .= " $author";
+  }
+    return $string;
+  }
+
 }
