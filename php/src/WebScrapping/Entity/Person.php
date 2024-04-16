@@ -24,8 +24,8 @@ class Person {
     $this->name = $name;
     $this->institution = $institution;
   }
-  
-  /** 
+
+  /**
    * Show in String.
    */
   public function __toString(): string {
